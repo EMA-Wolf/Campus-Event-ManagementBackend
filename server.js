@@ -10,7 +10,7 @@ require("dotenv").config()
 // Middleware to parse incoming JSON requests 
 // app.use(cors())
 app.use(cors({
-    origin: '*',
+    origin: process.env.FRONTEND_URL || '*',
     credentials: true
   })); 
 app.use(bodyparser.json());
