@@ -9,10 +9,28 @@ require("dotenv").config()
 
 // Middleware to parse incoming JSON requests 
 // app.use(cors())
+// app.use(cors({
+//     origin: [process.env.FIRST_FRONTEND_URL, process.env.SECOND_FRONTEND_URL,process.env.THIRD_FRONTEND_URL,process.env.FOURTH_FRONTEND_URL],
+//     credentials: true
+//   })); 
+// Dynamic CORS setup
 app.use(cors({
-    origin: [process.env.FIRST_FRONTEND_URL, process.env.SECOND_FRONTEND_URL,process.env.THIRD_FRONTEND_URL,process.env.FOURTH_FRONTEND_URL],
-    credentials: true
-  })); 
+  origin: (origin, callback) => {
+      const allowedOrigins = [
+          process.env.FIRST_FRONTEND_URL,
+          process.env.SECOND_FRONTEND_URL,
+          process.env.THIRD_FRONTEND_URL,
+          process.env.FOURTH_FRONTEND_URL
+      ];
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+      } else {
+          callback(new Error('Not allowed by CORS'));
+      }
+  },
+  credentials: true
+}));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
