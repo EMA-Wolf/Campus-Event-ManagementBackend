@@ -13,6 +13,7 @@ This project is a backend application built with Node.js and PostgreSQL, designe
 - [Database Configuration](#database-configuration)
 - [Contributing](#contributing)
 - [License](#license)
+- [API Testing with Postman](#api-testing-with-postman)
 
 ## Features
 
@@ -107,3 +108,29 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## API Testing with Postman
+
+To ensure the API endpoints are working correctly, you can use Postman for testing. Below are some screenshots demonstrating how to test the API endpoints:
+
+### Register User
+![Register User](./Endpoints-Images/Register.png)
+
+### Login User
+![Login User](./Endpoints-Images/Login.png)
+
+### Create Event
+![Create Event](./Endpoints-Images/CreateEvent.png)
+
+### Get All Events
+![Get All Events](./Endpoints-Images/GetAllEvents.png)
+
+### Confirm RSVP
+![Confirm RSVP](./Endpoints-Images/ConfirmRsvp.png)
+
+### Get User Events
+![Get User Events](./Endpoints-Images/GetAUserRsvp.png)
+
+### Cancel RSVP
+![Cancel RSVP](./Endpoints-Images/CancelRsvp.png)
+
